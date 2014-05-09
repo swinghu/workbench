@@ -1,0 +1,13 @@
+.classpath
+.project
+.settings
+.cache
+target
+*.iml
+.idea
+gen
+.DS_Store
+dependency-reduced-pom.xml
+*.pyc
+# do not ignore pydev project config file which is needed by pydev plugin
+!testdrive-mlpython/.project
