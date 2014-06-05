@@ -142,7 +142,7 @@ public class TimeUrlDriver {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
 		job.setInputFormatClass(TimeUrlTextInputFormat.class);
-		TimeUrlTextInputFormat.setInputPaths(job, new Path(args[0]));
+		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
 		return job.waitForCompletion(true) ? 0 : 1;
