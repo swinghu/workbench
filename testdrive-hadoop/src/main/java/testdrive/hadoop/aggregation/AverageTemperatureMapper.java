@@ -6,11 +6,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-/**
- * User: Bill Bejeck
- * Date: 10/8/12
- * Time: 9:55 PM
- */
 public class AverageTemperatureMapper extends Mapper<LongWritable, Text, Text, TemperatureAveragingPair> {
 
     private Text outText = new Text();

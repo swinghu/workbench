@@ -10,55 +10,54 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * User: Bill Bejeck
- * Date: 6/8/13
- * Time: 8:53 PM
+ * used to wrap our key. tag as join order
+ * 
  */
 public class TaggedKey implements Writable, WritableComparable<TaggedKey> {
 
-    private Text joinKey = new Text();
-    private IntWritable tag = new IntWritable();
+	private Text joinKey = new Text();
+	private IntWritable tag = new IntWritable();
 
-    public TaggedKey() {
-    }
+	public TaggedKey() {
+	}
 
-    public void set(String key, int tag){
-        this.joinKey.set(key);
-        this.tag.set(tag);
-    }
+	public void set(String key, int tag) {
+		this.joinKey.set(key);
+		this.tag.set(tag);
+	}
 
-    @Override
-    public int compareTo(TaggedKey taggedKey) {
-        int compareValue = this.joinKey.compareTo(taggedKey.getJoinKey());
-        if(compareValue == 0 ){
-            compareValue = this.tag.compareTo(taggedKey.getTag());
-        }
-       return compareValue;
-    }
+	@Override
+	public int compareTo(TaggedKey taggedKey) {
+		int compareValue = this.joinKey.compareTo(taggedKey.getJoinKey());
+		if (compareValue == 0) {
+			compareValue = this.tag.compareTo(taggedKey.getTag());
+		}
+		return compareValue;
+	}
 
-    public static TaggedKey read(DataInput in) throws IOException {
-        TaggedKey taggedKey = new TaggedKey();
-        taggedKey.readFields(in);
-        return taggedKey;
-    }
+	public static TaggedKey read(DataInput in) throws IOException {
+		TaggedKey taggedKey = new TaggedKey();
+		taggedKey.readFields(in);
+		return taggedKey;
+	}
 
-    @Override
-    public void write(DataOutput out) throws IOException {
-        joinKey.write(out);
-        tag.write(out);
-    }
+	@Override
+	public void write(DataOutput out) throws IOException {
+		joinKey.write(out);
+		tag.write(out);
+	}
 
-    @Override
-    public void readFields(DataInput in) throws IOException {
-        joinKey.readFields(in);
-        tag.readFields(in);
-    }
+	@Override
+	public void readFields(DataInput in) throws IOException {
+		joinKey.readFields(in);
+		tag.readFields(in);
+	}
 
-    public Text getJoinKey() {
-        return joinKey;
-    }
+	public Text getJoinKey() {
+		return joinKey;
+	}
 
-    public IntWritable getTag() {
-        return tag;
-    }
+	public IntWritable getTag() {
+		return tag;
+	}
 }

@@ -4,14 +4,14 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
 /**
- * User: Bill Bejeck
- * Date: 6/10/13
- * Time: 10:54 PM
+ * We only consider the join key when determining which reducer the composite
+ * key and data are sent to.
+ * 
  */
-public class TaggedJoiningPartitioner extends Partitioner<TaggedKey,Text> {
+public class TaggedJoiningPartitioner extends Partitioner<TaggedKey, Text> {
 
-    @Override
-    public int getPartition(TaggedKey taggedKey, Text text, int numPartitions) {
-        return taggedKey.getJoinKey().hashCode() % numPartitions;
-    }
+	@Override
+	public int getPartition(TaggedKey taggedKey, Text text, int numPartitions) {
+		return taggedKey.getJoinKey().hashCode() % numPartitions;
+	}
 }
