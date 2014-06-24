@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>testdrive</groupId>
+	<artifactId>testdrive-astyanax</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<!-- we have to use Java Driver 2.0.0-beta2 since 2.0.0-rc3 and above 
+				are incompatible with astyanax 2.0.0-beta-SNAPSHOT -->
+			<version>2.0.0-beta2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.astyanax</groupId>
+			<artifactId>astyanax-core</artifactId>
+			<version>2.0.0-beta-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.astyanax</groupId>
+			<artifactId>astyanax-cassandra</artifactId>
+			<version>2.0.0-beta-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.astyanax</groupId>
+			<artifactId>astyanax-thrift</artifactId>
+			<version>2.0.0-beta-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.astyanax</groupId>
+			<artifactId>astyanax-cql</artifactId>
+			<version>2.0.0-beta-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.astyanax</groupId>
+			<artifactId>astyanax-entity-mapper</artifactId>
+			<version>2.0.0-beta-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
