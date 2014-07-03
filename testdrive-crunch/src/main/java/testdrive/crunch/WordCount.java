@@ -25,7 +25,7 @@ public class WordCount extends Configured implements Tool {
 
 		if (args.length != 2) {
 			System.err
-					.println("Usage: hadoop jar actinsights-quickstart-crunch-0.0.1-SNAPSHOT-job.jar"
+					.println("Usage: hadoop jar target/testdrive-crunch-0.0.1-SNAPSHOT-job.jar"
 							+ " [generic options] input output");
 			System.err.println();
 			GenericOptionsParser.printGenericCommandUsage(System.err);
@@ -37,7 +37,7 @@ public class WordCount extends Configured implements Tool {
 
 		// Create an object to coordinate pipeline creation and execution.
 		Pipeline pipeline = new MRPipeline(WordCount.class, getConf());
-		
+
 		// Reference a given text file as a collection of Strings.
 		PCollection<String> lines = pipeline.readTextFile(inputPath);
 
