@@ -7,7 +7,7 @@ import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.TTransportException;
 
-public class ArithmeticClient {
+public class BlockingClient {
 
 	private void invoke() {
 		TTransport transport;
@@ -34,7 +34,7 @@ public class ArithmeticClient {
 	}
 
 	public static void main(String[] args) {
-		ArithmeticClient c = new ArithmeticClient();
+		BlockingClient c = new BlockingClient();
 		c.invoke();
 
 	}

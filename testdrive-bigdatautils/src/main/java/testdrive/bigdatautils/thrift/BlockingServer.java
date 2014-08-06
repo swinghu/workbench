@@ -5,7 +5,7 @@ import org.apache.thrift.server.TThreadPoolServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TTransportException;
 
-public class Server {
+public class BlockingServer {
 
 	private void start() {
 		try {
@@ -24,7 +24,7 @@ public class Server {
 	}
 
 	public static void main(String[] args) {
-		Server srv = new Server();
+		BlockingServer srv = new BlockingServer();
 		srv.start();
 	}
 
