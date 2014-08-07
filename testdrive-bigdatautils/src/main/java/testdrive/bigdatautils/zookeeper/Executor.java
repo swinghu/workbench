@@ -41,7 +41,7 @@ public class Executor implements Watcher, Runnable,
 	}
 
 	/**
-	 * @param args
+	 * localhost:2181 /aaa target/datamonitor.log ls /
 	 */
 	public static void main(String[] args) {
 		if (args.length < 4) {
