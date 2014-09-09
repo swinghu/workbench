@@ -99,13 +99,13 @@ def grabTree(filename):
     return pickle.load(fr)
 
 def test():
-    dataSet = [[1, 1, 'yes'],
-               [1, 1, 'yes'],
-               [1, 0, 'no'],
-               [0, 1, 'no'],
-               [0, 1, 'no']]
+    dataSet,labels = createDataSet()
     ent = calcShannonEnt(dataSet)
     print ent
+    tree = createTree(dataSet, labels)
+    print tree
+    from dt import treePlotter
+    treePlotter.createPlot(tree)
 
 if __name__ == "__main__":
     test()
