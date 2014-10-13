@@ -1,0 +1,6 @@
+tableName: table2
+schemaPattern: WIDE
+varrayColCount: 2
+regionCount: 4
+rangeDir: /tmp/table2/range
+hfileDir: /tmp/table2/hfile

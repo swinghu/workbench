@@ -1,0 +1,5 @@
+tableName: table1
+schemaPattern: STANDARD
+regionCount: 4
+rangeDir: /tmp/table1/range
+hfileDir: /tmp/table1/hfile

@@ -1,0 +1,6 @@
+tableName: table3
+schemaPattern: SERIALIZED
+varrayColCount: 2
+regionCount: 4
+rangeDir: /tmp/table3/range
+hfileDir: /tmp/table3/hfile
